@@ -1,8 +1,12 @@
 package com.meeting.rooms.reservations.utils;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
+
+import org.springframework.data.domain.Page;
 
 import com.meeting.rooms.reservations.dto.ReservaDTO;
 import com.meeting.rooms.reservations.entity.Reserva;
@@ -16,7 +20,7 @@ public class Utils {
         List<Reserva> reservas = sala.getReservas()
                 .stream()
                 .filter((reserva) -> reserva.getEstado().equals(Estado.ACTIVA))
-                .collect(Collectors.toList());  
+                .collect(Collectors.toList());
         for (Reserva reserva : reservas) {
             LocalDateTime inicioTemp = reserva.getInicio();
             LocalDateTime finTemp = reserva.getFin();
@@ -33,10 +37,19 @@ public class Utils {
 
     public static boolean isValidReserva(ReservaDTO reserva) {
 
-        return reserva.getSalaId() != null && reserva.getResponsableId() !=  null 
-        && reserva.getInicio() != null  && reserva.getFin() != null 
-        && reserva.getNombreActividad() != null;      
+        return reserva.getSalaId() != null && reserva.getResponsableId() != null
+                && reserva.getInicio() != null && reserva.getFin() != null
+                && reserva.getNombreActividad() != null;
 
+    }
+
+    public static Map<String, Object> returnResponse(List<ReservaDTO> reservasDTO, Page<Reserva> pageReservas) {
+        Map<String, Object> response = new HashMap<>();
+        response.put("reservas", reservasDTO);
+        response.put("currentPage", pageReservas.getNumber());
+        response.put("totalItems", pageReservas.getTotalElements());
+        response.put("totalPages", pageReservas.getTotalPages());
+        return response;
     }
 
 }
