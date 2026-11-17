@@ -394,9 +394,9 @@ Le añadiría las migraciones en Flyway o Liquibase.
 
 # Cuánto tiempo me llevó?
 
-Me llevó un poco más de 3 horas, quizás 4 o 5, aproveche las 48 horas para revisar todo lo que debía tener enn cuenta 
+Me llevó más de 3 horas implementar la App, aproveche las 48 horas para revisar todo lo que debía tener en cuenta 
 según las especificaciones que me enviaron, pero siempre en el momento de implementar se presentan imprevistos que pueden
-demorar un poco más el desarrollo, uilicé la IA para crear las Entities, Las DTOs, los Mappers, los tests, el resto lo implementé directamente para tener en cuenta lo especificado.
+demorar un poco más el desarrollo, utilicé la IA para crear las Entities, Las DTOs, los Mappers, los tests, el resto lo implementé directamente para tener en cuenta lo especificado.
 
 
 
