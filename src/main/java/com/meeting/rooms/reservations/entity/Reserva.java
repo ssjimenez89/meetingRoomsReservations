@@ -15,7 +15,7 @@ import jakarta.persistence.Table;
 import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.meeting.rooms.enums.Estado;
+import com.meeting.rooms.reservations.enums.Estado;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

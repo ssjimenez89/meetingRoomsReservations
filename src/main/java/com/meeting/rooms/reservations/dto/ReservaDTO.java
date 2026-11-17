@@ -2,7 +2,7 @@ package com.meeting.rooms.reservations.dto;
 
 import java.time.LocalDateTime;
 
-import com.meeting.rooms.enums.Estado;
+import com.meeting.rooms.reservations.enums.Estado;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
