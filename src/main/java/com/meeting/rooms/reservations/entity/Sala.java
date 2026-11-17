@@ -10,6 +10,9 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -29,16 +32,17 @@ public class Sala {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, name = "nombre")
     private String nombre;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "capacidad")
     private Integer capacidad;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "disponibilidad")
     private Boolean disponibilidad;
 
     @OneToMany(mappedBy = "sala", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnoreProperties("sala")
     private List<Reserva> reservas = new ArrayList<>();
 
     public void addReserva(Reserva reserva) {
