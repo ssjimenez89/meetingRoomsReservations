@@ -14,10 +14,10 @@ http://localhost:8082
 http://localhost:8082/swagger-ui/index.html
 
 # Tecnologías
-Spring Boot 4.1.2
-H2 Database
-Java 17
-Maven
+### Spring Boot 4.1.2
+### H2 Database
+### Java 17
+### Maven
 
 # Para ejecutar la App
 
@@ -33,13 +33,13 @@ Se implementó una seguridad básica, que se puede utilizar accediendo con las s
 ## Password: admin
 
 Se tuvo en cuenta que para listar en cualquiera de los endpoints no sea necesario estar autenticado.
-Para los crear, así para el cancelar Reserva si sea necesaria la autenticación.
+Para los crear, así para el cancelar Reserva si será necesaria la autenticación.
 
 # Entidades de la App
 
-Sala (nombre, capacidad, disponibilidad, reservas)
-Reserva (sala, responsable, inicio, fin, nombreActividad)
-Responsable (nombre, apellidos, edad, sexo, cargo)
+### Sala (nombre, capacidad, disponibilidad, reservas)
+### Reserva (sala, responsable, inicio, fin, nombreActividad)
+### Responsable (nombre, apellidos, edad, sexo, cargo)
 
 Se definió que Sala tiene una relación de uno a muchos con Reserva y 
 Reserva tiene una relación de uno a uno con Responsable.
@@ -381,12 +381,12 @@ se devuelve 409 y un mensaje especificando que "La Sala esta ocupada en este hor
 
 Asi mismo se validaron errores 400, para cuado se envian campos nulos en una reserva.
 
-Teniendo enn cuenta la relaciónn de uno a uno entre las Entides de Reserva y Responsable tambbién se validó que no se
-pueda crear dos Reservas con el mismo Responsable, para lo cual se lanza el error 400 con una alerta esppecificando que "El responsable ya tiene un Reserva".
+Teniendo enn cuenta la relaciónn de uno a uno entre las Entides de Reserva y Responsable también se validó que no se
+pueda crear dos Reservas con el mismo Responsable, para lo cual se lanza el error 400 con una alerta especificando que "El responsable ya tiene un Reserva".
 
 # Que haría con más Tiempo?
 
-Mejoraría la Seguridad, con tokens o una versión más elaborada de Seguridaad Básica.
+Mejoraría la Seguridad, con tokens o una versión más elaborada de Seguridad Básica.
 Completaría los tests.
 Refactorizaría algunas clases y métodos para limpiar el código.
 Le agregaría un frontend.
@@ -394,9 +394,9 @@ Le añadiría las migraciones en Flyway o Liquibase.
 
 # Cuánto tiempo me llevó?
 
-Me llevó un poco más de 3 horas, quizás 4, aprovechhe las 48 horas para revisar todo lo que debbía tener enn cuenta 
+Me llevó un poco más de 3 horas, quizás 4 o 5, aproveche las 48 horas para revisar todo lo que debía tener enn cuenta 
 según las especificaciones que me enviaron, pero siempre en el momento de implementar se presentan imprevistos que pueden
-demorar un poco más el desarrollo.
+demorar un poco más el desarrollo, uilicé la IA para crear las Entities, Las DTOs, los Mappers, los tests, el resto lo implementé directamente para tener en cuenta lo especificado.
 
 
 
